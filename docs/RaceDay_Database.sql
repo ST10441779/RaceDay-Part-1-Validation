@@ -1,9 +1,3 @@
-/*
-  RaceDay - Part 1 Database Script
-  SQL Server / SSMS
-  Creates and seeds the complete RaceDay database.
-*/
-
 IF DB_ID(N'RaceDayDB') IS NULL
     CREATE DATABASE RaceDayDB;
 GO
