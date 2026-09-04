@@ -1,0 +1,27 @@
+name: RaceDay Part 1 Validation
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Validate Part 1 structure
+        shell: bash
+        run: |
+          set -e
+          test -d docs
+          test -f docs/RaceDay_ERD.png
+          test -f docs/RaceDay_ERD.pdf
+          test -f docs/RaceDay_API_Endpoint_Plan.md
+          test -f docs/RaceDay_Database.sql
+          test -s README.md
+          echo "RaceDay Part 1 structure validation passed."
+
